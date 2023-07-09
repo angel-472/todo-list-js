@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+
+  font-family: sans-serif;
+  background-color: #09090b;
+  color: white;
+}
+
+.icon-round {
+  background-color: #2196F3;
+  padding: 0.5em;
+  border-radius: 100px;
+}
+
+.icon-square {
+  background-color: #2196F3;
+  padding: 0.5em;
+  border-radius: .5em;
+}
+
+main {
+  display: flex;
+  gap: 1em;
+}
+
+#header-text {
+  font-family: 'Lato';
+  margin: 1rem 0;
+  font-weight: bold;
+  color: orange;
+}
+
+.div-task-lists {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  margin-top: 2rem;
+}
+
+.btn-task-list {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+
+  width: 250px;
+  padding: .5em;
+  text-align: left;
+  font-family: 'Lato';
+  font-weight: bold;
+  font-size: 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #27272a;
+  color: white;
+}
+
+.btn-task-list .task-amount {
+  margin-left: auto;
+}
+
+#task-lists .task-list-name {
+  cursor: text;
+}
+
+#tasks {
+  height: 100%;
+  width: 100%;
+  background-color: #18181b;
+  border-radius: 16px;
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#tasks-title {
+  font-family: 'Lato';
+}
+
+.task {
+  display: flex;
+  gap: 1em;
+  padding: .5em 0;
+}
+
+.task-checkbox {
+  align-self: flex-start;
+  background-color: rgba(0,0,0,0);
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid #a1a1aa;
+  border-radius: 100px;
+  color: #a1a1aa;
+  cursor: pointer;
+}
+
+.task-description {
+  color: #a1a1aa;
+}
+
+.task-date {
+  color: #a1a1aa;
+  margin-top: .2em;
+}
+
+#new-task {
+  background-color: orange;
+  border: none;
+  color: black;
+  font-family: 'Lato';
+  font-weight: bold;
+  width: max-content;
+  padding: .5em;
+  border-radius: .5em;
+  margin-top: .5em;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+#new-list {
+  background-color: #2196F3;
+  border: none;
+  color: black;
+  font-family: 'Lato';
+  font-weight: bold;
+  width: max-content;
+  padding: .5em;
+  border-radius: .5em;
+  margin-top: 2em;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+#task-list-editor {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Lato';
+  backdrop-filter: blur(1px);
+}
+
+#task-list-editor-box {
+  background-color: #18181b;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 16px;
+  gap: 1em;
+}
+
+#task-list-editor-header {
+  display: flex;
+  gap: 4em;
+}
+
+#task-list-editor a {
+  color: #03A9F4;
+  cursor: pointer;
+}
+
+#task-list-editor a.disabled {
+  color: #494e50;
+  cursor: auto;
+}
+
+#task-list-editor-title {
+  font-weight: bold;
+}
+
+#task-list-editor-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #27272a;
+  border-radius: 8px;
+  gap: 2em;
+}
+
+#task-list-editor-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+#task-list-editor-icon {
+  font-size: 32px;
+}
+
+#task-list-editor-name {
+  text-align: center;
+  padding: .5em;
+  font-size: 16px;
+  border-radius: .5em;
+  border: none;
+  font-weight: bold;
+}
+
+.color-circle {
+  background-color: red;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+.color-circle.selected {
+  outline: 3px solid #525259;
+}
+
+#task-list-editor-colors {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  max-width: 18em;
+  justify-content: center;
+}
+
+#task-list-editor-icons {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  max-width: 18em;
+  justify-content: center;
+}
+
+#task-list-editor-icons > button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  background-color: #3f3f46;
+  color: white;
+}
+
+#task-list-editor-icons > button.selected {
+  outline: 3px solid #525259;
+}

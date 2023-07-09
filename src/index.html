@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"> <!--icon library-->
+    <title>Todo List</title>
+  </head>
+
+  <body>
+    <div id="task-list-editor">
+      <div id="task-list-editor-box">
+        <div id="task-list-editor-header">
+          <a id="task-list-editor-cancel">Cancel</a>
+          <p id="task-list-editor-title">New List</p>
+          <a id="task-list-editor-save">Save</a>
+        </div>
+        <div id="task-list-editor-body">
+          <div id="task-list-editor-details">
+            <i id="task-list-editor-icon" class="fa-solid fa-list-check icon-square" style="background-color: #11736a;"></i>
+            <input id="task-list-editor-name" type="text" placeholder="List Name"></input>
+          </div>
+          <div id="task-list-editor-colors">
+          </div>
+          <div id="task-list-editor-icons">
+          </div>
+        </div>
+      </div>
+    </div>
+    <header>
+      <h1 id="header-text">To-do List</h1>
+    </header>
+    <main>
+      <div id="sidebar">
+        <div class="div-task-lists">
+          <button class="btn-task-list">
+            <i class="fa-solid fa-inbox icon-round"></i>
+            <p>All Tasks</p>
+            <p class="task-amount">0</p>
+          </button>
+          <button class="btn-task-list">
+            <i class="fa-solid fa-calendar-day icon-round" style="background-color: #F44336;"></i>
+            <p>Today</p>
+            <p class="task-amount">0</p>
+          </button>
+          <button class="btn-task-list">
+            <i class="fa-regular fa-calendar icon-round" style="background-color: #FF9800;"></i>
+            <p>Scheduled</p>
+            <p class="task-amount">0</p>
+          </button>
+        </div>
+        <div id="task-lists" class="div-task-lists">
+        </div>
+        <button id="new-list">
+          <i class="fa-solid fa-square-plus"></i>
+          <p>New List</p>
+        </button>
+      </div>
+      <div id="tasks">
+        <h2 id="tasks-title">All Tasks</h2>
+        <div id="tasks-container">
+
+        </div>
+        <button id="new-task">
+          <i class="fa-solid fa-square-plus"></i>
+          <p>New Task</p>
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
