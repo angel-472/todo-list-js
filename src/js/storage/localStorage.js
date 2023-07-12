@@ -42,6 +42,12 @@ export class LocalDataStorage {
     }
     return null; // or any other value indicating that the task list was not found
   }
+  getTaskListById(id){
+    return this.taskLists[id];
+  }
+  getTaskLists(){
+    return Object.values(this.taskLists);
+  }
   deleteTaskList(taskList){
     delete this.taskLists[taskList.id];
   }
