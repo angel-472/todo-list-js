@@ -70,5 +70,6 @@ export class TaskEditor {
     let taskList = this.app.storage.getTaskListById(this.taskListPicker.value);
     this.app.storage.addTaskToList(task, taskList);
     console.log(taskList);
+    this.hide();
   }
 }
