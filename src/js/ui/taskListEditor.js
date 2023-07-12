@@ -61,7 +61,6 @@ export class TaskListEditor {
       }
       container.appendChild(button);
       button.addEventListener("click", () => {
-        console.log(this.currentTaskList);
         this.setIcon(iconName);
         this.updateIconDisplay();
         this.updateIconPicker();
