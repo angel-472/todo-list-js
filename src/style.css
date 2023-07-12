@@ -84,6 +84,10 @@ main {
   flex-direction: column;
 }
 
+#tasks-container {
+  padding: 1rem 0rem;
+}
+
 #tasks-title {
   font-family: 'Lato';
 }
@@ -105,8 +109,13 @@ main {
   cursor: pointer;
 }
 
+.task-name {
+
+}
+
 .task-description {
   color: #a1a1aa;
+  margin-top: .2em;
 }
 
 .task-date {
@@ -152,8 +161,8 @@ main {
   z-index: 10;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 1em);
+  height: calc(100vh - 1em);
   font-family: 'Lato';
   backdrop-filter: blur(1px);
 }
@@ -258,4 +267,79 @@ main {
 
 #task-list-editor-icons > button.selected {
   outline: 3px solid #525259;
+}
+
+#task-editor {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  width: calc(100vw - 1em);
+  height: calc(100vh - 1em);
+  font-family: 'Lato';
+  backdrop-filter: blur(1px);
+}
+
+#task-editor-box {
+  background-color: #18181b;
+  padding: 1em;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+#task-editor-header {
+  display: flex;
+  gap: 4em;
+}
+
+#task-editor a {
+  color: #03A9F4;
+  cursor: pointer;
+}
+
+#task-editor a.disabled {
+  color: #494e50;
+  cursor: auto;
+}
+
+#task-editor-title {
+  font-weight: bold;
+}
+
+#task-editor-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background-color: #27272a;
+  border-radius: 1em;
+  width: 100%;
+}
+
+#task-editor-body input{
+  border: none;
+  padding: 1em;
+  text-align: center;
+  font-family: 'Lato';
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+#task-editor-list-container {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #3f3f46;
+  padding: .5em;
+  border-radius: 8px;
+}
+
+#task-editor-list {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: gray;
 }

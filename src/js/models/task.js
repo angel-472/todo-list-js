@@ -1,5 +1,5 @@
 export class Task {
-  constructor(list, name){
+  constructor(name){
     this.id = crypto.randomUUID();
     this.name = name;
     this.description = "";

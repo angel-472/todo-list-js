@@ -8,8 +8,4 @@ export class List {
     this.color = '#11736a';
     this.icon = 'fa-list-check';
   }
-  createNewTask(name){
-    let task = new Task(this, name);
-    this.tasks.push(task);
-  }
 }

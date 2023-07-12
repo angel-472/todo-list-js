@@ -23,8 +23,8 @@ export class LocalDataStorage {
     let data = "";
     localStorage.setItem(this.localStorageKey, data);
   }
-  createNewTask(list){
-    let task = new Task(list,"new task");
+  createNewTask(name){
+    let task = new Task(name);
     return task;
   }
   createNewTaskList(name){
@@ -33,10 +33,10 @@ export class LocalDataStorage {
     taskList.new = true;
     return taskList;
   }
-  getTaskList(name) {
+  getTaskList(taskListName) {
     const taskLists = Object.values(this.taskLists);
     for (let i = 0; i < taskLists.length; i++) {
-      if (taskLists[i].name === name) {
+      if (taskLists[i].name === taskListName) {
         return taskLists[i];
       }
     }
@@ -44,5 +44,8 @@ export class LocalDataStorage {
   }
   deleteTaskList(taskList){
     delete this.taskLists[taskList.id];
+  }
+  addTaskToList(task, list){
+    list.tasks.push(task);
   }
 }

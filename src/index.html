@@ -11,6 +11,26 @@
   </head>
 
   <body>
+    <div id="task-editor">
+      <div id="task-editor-box">
+        <div id="task-editor-header">
+          <a id="task-editor-cancel">Cancel</a>
+          <p id="task-editor-title">New Task</p>
+          <a id="task-editor-save">Save</a>
+        </div>
+        <div id="task-editor-body">
+          <input id="task-editor-name" type="text" placeholder="Task Name"></input>
+          <input id="task-editor-description" type="text" placeholder="Description (optional)"></input>
+          <input id="task-editor-date" type="datetime-local"></input>
+          <div id="task-editor-list-container">
+            <p>List</p>
+            <select id="task-editor-list">
+              <option value="all tasks">All Tasks</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="task-list-editor">
       <div id="task-list-editor-box">
         <div id="task-list-editor-header">
@@ -62,7 +82,30 @@
       <div id="tasks">
         <h2 id="tasks-title">All Tasks</h2>
         <div id="tasks-container">
-
+          <div class="task">
+            <button class="task-checkbox"></button>
+            <div>
+              <p class="task-name">new task</p>
+              <p class="task-description">This is the task's description</p>
+              <p class="task-date">Today, 10:00PM</p>
+            </div>
+          </div>
+          <div class="task">
+            <button class="task-checkbox"></button>
+            <div>
+              <p class="task-name">another task</p>
+              <p class="task-description">This is another task</p>
+              <p class="task-date">Tomorrow, 9:00AM</p>
+            </div>
+          </div>
+          <div class="task">
+            <button class="task-checkbox"></button>
+            <div>
+              <p class="task-name">Go to work</p>
+              <p class="task-description">Clock in at my job</p>
+              <p class="task-date">Tomorrow, 10:30AM</p>
+            </div>
+          </div>
         </div>
         <button id="new-task">
           <i class="fa-solid fa-square-plus"></i>

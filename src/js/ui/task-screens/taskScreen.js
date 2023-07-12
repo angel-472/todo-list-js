@@ -6,6 +6,6 @@ export class TaskScreen {
     return 'this is a tasks screen!';
   }
   init(){
-
+    this.tasksContainer = document.getElementById("tasks-container");
   }
 }
