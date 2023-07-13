@@ -29,7 +29,7 @@ export class SideBar {
     element.innerHTML = `
       <i class="fa-solid ${list.icon} icon-square" style="background-color: ${list.color};"></i>
       <p class="task-list-name">${list.name}</p>
-      <p class="task-amount">0</p>
+      <p class="task-amount">${list.tasks.length}</p>
     `;
     element.classList.add("tasklist-" + list.id);
     return element;

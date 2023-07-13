@@ -88,6 +88,7 @@ export class TaskEditor {
     }
     this.hide();
     this.app.mainUI.updateCurrentScreen();
+    this.app.sidebar.update();
     this.app.storage.save();
   }
   restoreValues(){
