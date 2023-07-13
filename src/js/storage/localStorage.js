@@ -10,6 +10,8 @@ export class LocalDataStorage {
   load(){
     let localStorageData = localStorage.getItem(this.localStorageKey);
     if(localStorageData !== null){
+      let data = JSON.parse(localStorageData);
+      this.taskLists = data;
       console.log("Loaded data from local storage");
     }
     else {
@@ -20,7 +22,7 @@ export class LocalDataStorage {
     this.defaultTaskList = this.getTaskList("Tasks");
   }
   save(){
-    let data = "";
+    let data = JSON.stringify(this.taskLists);
     localStorage.setItem(this.localStorageKey, data);
   }
   createNewTask(name){
@@ -48,10 +50,17 @@ export class LocalDataStorage {
   getTaskLists(){
     return Object.values(this.taskLists);
   }
+  getDefaultTaskList(){
+    return this.defaultTaskList;
+  }
   deleteTaskList(taskList){
     delete this.taskLists[taskList.id];
   }
   addTaskToList(task, list){
     list.tasks.push(task);
+  }
+  removeTaskFromList(list, task){
+    let index = list.tasks.indexOf(task);
+    list.tasks.splice(index, 1);
   }
 }

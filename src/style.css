@@ -88,8 +88,22 @@ main {
   padding: 1rem 0rem;
 }
 
+#tasks-header {
+  display: flex;
+  align-items: center;
+}
+
 #tasks-title {
   font-family: 'Lato';
+}
+
+#btn-edit-task-list {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+#btn-edit-task-list:hover {
+  color: gray;
 }
 
 .task {
@@ -341,5 +355,13 @@ main {
 #task-editor-list {
   background-color: rgba(0,0,0,0);
   border: none;
+  color: gray;
+}
+
+.empty-task-list-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3em 0em;
   color: gray;
 }

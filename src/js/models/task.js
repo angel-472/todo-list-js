@@ -4,5 +4,6 @@ export class Task {
     this.name = name;
     this.description = "";
     this.date = undefined;
+    this.listId = undefined;
   }
 }

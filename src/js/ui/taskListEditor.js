@@ -110,8 +110,11 @@ export class TaskListEditor {
   save(){
     let taskList = this.currentTaskList;
     taskList.name = this.nameInput.value;
+    delete taskList.new;
     this.app.sidebar.update();
+    this.app.mainUI.updateCurrentScreen();
     this.hide();
+    this.app.storage.save();
   }
   reset(){
     this.nameInput.value = "";

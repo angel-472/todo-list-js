@@ -17,6 +17,10 @@ export class SideBar {
       let list = lists[i];
       let element = this.getTaskListElement(list);
       container.appendChild(element);
+      element.addEventListener('click', () => {
+        console.log(list.id);
+        this.app.mainUI.showTaskList(list);
+      });
     }
   }
   getTaskListElement(list){
