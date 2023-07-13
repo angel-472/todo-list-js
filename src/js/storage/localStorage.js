@@ -19,7 +19,7 @@ export class LocalDataStorage {
       let defaultTaskList = new List("Tasks");
       this.taskLists[defaultTaskList.id] = defaultTaskList;
     }
-    this.defaultTaskList = this.getTaskList("Tasks");
+    this.defaultTaskList = Object.values(this.taskLists)[0];
   }
   save(){
     let data = JSON.stringify(this.taskLists);

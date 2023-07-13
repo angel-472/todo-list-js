@@ -3,6 +3,7 @@ export class TaskListEditor {
     this.app = app;
   }
   init(){
+    this.editorTitle = document.getElementById("task-list-editor-title");
     this.editorElement = document.getElementById("task-list-editor");
     this.cancelButton = document.getElementById("task-list-editor-cancel");
     this.saveButton = document.getElementById("task-list-editor-save");
@@ -87,6 +88,7 @@ export class TaskListEditor {
     this.currentTaskList = taskList;
     if(!taskList.new){
       this.nameInput.value = taskList.name;
+      this.editorTitle.textContent = "Editing List";
     }
     this.show();
     this.update();
@@ -118,5 +120,6 @@ export class TaskListEditor {
   }
   reset(){
     this.nameInput.value = "";
+    this.editorTitle.textContent = "New List";
   }
 }
