@@ -58,6 +58,7 @@ export class LocalDataStorage {
   }
   addTaskToList(task, list){
     list.tasks.push(task);
+    task.listId = list.id
   }
   removeTaskFromList(list, task){
     let index = list.tasks.indexOf(task);
