@@ -63,4 +63,8 @@ export class LocalDataStorage {
     let index = list.tasks.indexOf(task);
     list.tasks.splice(index, 1);
   }
+  deleteTask(task){
+    let list = this.getTaskListById(task.listId);
+    this.removeTaskFromList(list, task);
+  }
 }

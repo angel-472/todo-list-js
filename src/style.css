@@ -139,6 +139,19 @@ main {
   margin-top: .2em;
 }
 
+.task-delete-btn {
+  cursor: pointer;
+}
+
+.task-delete-btn:hover {
+  cursor: pointer;
+  color: gray;
+}
+
+.task-hover-icons {
+  margin-left: auto;
+}
+
 #new-task {
   background-color: orange;
   border: none;
@@ -366,4 +379,12 @@ main {
   justify-content: center;
   padding: 3em 0em;
   color: gray;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  padding: .5em;
+  border-radius: .5em;
+  color: white;
+  border: none;
 }

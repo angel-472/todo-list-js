@@ -5,6 +5,7 @@ export class TaskEditor {
   init(){
     this.titleElement = document.getElementById("task-editor-title")
     this.editorElement = document.getElementById("task-editor");
+    this.editorBody = document.getElementById("task-editor-body");
     this.cancelButton = document.getElementById("task-editor-cancel");
     this.saveButton = document.getElementById("task-editor-save");
     this.nameInput = document.getElementById("task-editor-name");
@@ -46,8 +47,9 @@ export class TaskEditor {
     this.currentTask = task;
     this.reset();
     this.show();
-    if(this.currentTask.new !== true){
+    if(this.currentTask.new !== true){ //task is not new
       this.restoreValues();
+      //this.showDeleteButton();
     }
 
     this.update();
@@ -96,5 +98,22 @@ export class TaskEditor {
     this.descriptionInput.value = this.currentTask.description;
     this.dateInput.value = this.currentTask.date;
     this.titleElement.textContent = "Editing Task";
+  }
+  showDeleteButton(){
+    if(this.deleteButton == undefined){
+      let btn = document.createElement("button");
+      btn.classList.add("btn-delete");
+      btn.textContent = "Delete Task";
+      this.editorBody.appendChild(btn);
+      this.deleteButton = btn;
+    }
+    else {
+      this.deleteButton.style.display = "block";
+    }
+  }
+  hideDeleteButton(){
+    if(this.deleteButton !== undefined ){
+      this.deleteButton.style.display = "none";
+    }
   }
 }
