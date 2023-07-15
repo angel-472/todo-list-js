@@ -139,6 +139,10 @@ main {
   margin-top: .2em;
 }
 
+.task-date-past {
+  color: #ef4444;
+}
+
 .task-delete-btn {
   cursor: pointer;
   color: #52525b;

@@ -114,6 +114,9 @@ export class TaskListEditor {
   save(){
     let taskList = this.currentTaskList;
     taskList.name = this.nameInput.value;
+    if(taskList.new){
+      this.app.mainUI.showTaskList(taskList);
+    }
     delete taskList.new;
     this.app.sidebar.update();
     this.app.mainUI.updateCurrentScreen();
@@ -135,6 +138,14 @@ export class TaskListEditor {
 
       btn.addEventListener('click', () => {
         console.log("deleting list: " + this.currentTaskList.name);
+        this.app.storage.deleteTaskList(this.currentTaskList);
+        this.app.storage.save();
+        this.app.sidebar.update();
+        if(this.app.mainUI.getCurrentScreen().taskList !== undefined && this.app.mainUI.getCurrentScreen().taskList == this.currentTaskList){
+          let taskList = Object.values(this.app.storage.taskLists)[0];
+          this.app.mainUI.showTaskList(taskList);
+        }
+        this.hide();
       });
     }
     else {

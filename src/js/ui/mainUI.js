@@ -29,6 +29,9 @@ export class MainUI {
     screen.show();
     this.currentScreen = screen;
   }
+  getCurrentScreen(){
+    return this.currentScreen;
+  }
   updateCurrentScreen(){
     if(this.currentScreen !== undefined){
       this.currentScreen.show();

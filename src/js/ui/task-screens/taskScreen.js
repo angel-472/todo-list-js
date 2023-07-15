@@ -1,3 +1,5 @@
+import { parseISO, format, isSameDay } from 'date-fns'
+
 export class TaskScreen {
   constructor(app){
     this.app = app;
@@ -23,9 +25,29 @@ export class TaskScreen {
       descriptionElement.classList.add("task-description");
       detailsContainer.appendChild(descriptionElement);
     }
-    if(task.date !== undefined){
+    if (task.date !== undefined) {
       let dateElement = document.createElement("p");
-      dateElement.textContent = task.date;
+      let date = parseISO(task.date);
+      let formattedDate;
+    
+      const today = new Date();
+      const yesterday = new Date(today);
+      yesterday.setDate(yesterday.getDate() - 1);
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+    
+      if (isSameDay(date, tomorrow)) {
+        formattedDate = format(date, "'Tomorrow,' hh:mm a");
+      } else if (isSameDay(date, yesterday)) {
+        formattedDate = format(date, "'Yesterday,' hh:mm a");
+      } else {
+        formattedDate = format(date, "M/d/yy, hh:mm a");
+      }
+      if(today > date){
+        dateElement.classList.add("task-date-past");
+      }
+    
+      dateElement.textContent = formattedDate;
       dateElement.classList.add("task-date");
       detailsContainer.appendChild(dateElement);
     }
