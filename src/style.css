@@ -125,6 +125,10 @@ main {
   flex-shrink: 0;
 }
 
+.task-details {
+  cursor: pointer;
+}
+
 .task-name {
   font-weight: normal;
 }

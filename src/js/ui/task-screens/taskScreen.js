@@ -15,6 +15,7 @@ export class TaskScreen {
 
     //details
     let detailsContainer = document.createElement("div");
+    detailsContainer.classList.add("task-details");
     let nameElement = document.createElement("p");
     nameElement.textContent = task.name;
     nameElement.classList.add("task-name");
@@ -26,6 +27,7 @@ export class TaskScreen {
       detailsContainer.appendChild(descriptionElement);
     }
     if (task.date !== undefined) {
+      //date format
       let dateElement = document.createElement("p");
       let date = parseISO(task.date);
       let formattedDate;
@@ -40,6 +42,8 @@ export class TaskScreen {
         formattedDate = format(date, "'Tomorrow,' hh:mm a");
       } else if (isSameDay(date, yesterday)) {
         formattedDate = format(date, "'Yesterday,' hh:mm a");
+      } else if (isSameDay(date, today)){
+        formattedDate = format(date, "'Today, ' hh:mm a")
       } else {
         formattedDate = format(date, "M/d/yy, hh:mm a");
       }
