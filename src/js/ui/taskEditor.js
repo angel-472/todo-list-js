@@ -99,21 +99,4 @@ export class TaskEditor {
     this.dateInput.value = this.currentTask.date;
     this.titleElement.textContent = "Editing Task";
   }
-  showDeleteButton(){
-    if(this.deleteButton == undefined){
-      let btn = document.createElement("button");
-      btn.classList.add("btn-delete");
-      btn.textContent = "Delete Task";
-      this.editorBody.appendChild(btn);
-      this.deleteButton = btn;
-    }
-    else {
-      this.deleteButton.style.display = "block";
-    }
-  }
-  hideDeleteButton(){
-    if(this.deleteButton !== undefined ){
-      this.deleteButton.style.display = "none";
-    }
-  }
 }

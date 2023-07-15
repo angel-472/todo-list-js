@@ -141,11 +141,8 @@ main {
 
 .task-delete-btn {
   cursor: pointer;
-}
-
-.task-delete-btn:hover {
-  cursor: pointer;
-  color: gray;
+  color: #52525b;
+  height: max-content;
 }
 
 .task-hover-icons {
@@ -382,9 +379,11 @@ main {
 }
 
 .btn-delete {
-  background-color: #f44336;
+  background-color: #ef4444;
   padding: .5em;
   border-radius: .5em;
   color: white;
   border: none;
+  cursor: pointer;
+  font-family: 'Lato';
 }

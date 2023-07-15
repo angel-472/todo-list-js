@@ -5,6 +5,7 @@ export class TaskListEditor {
   init(){
     this.editorTitle = document.getElementById("task-list-editor-title");
     this.editorElement = document.getElementById("task-list-editor");
+    this.editorBody = document.getElementById("task-list-editor-body");
     this.cancelButton = document.getElementById("task-list-editor-cancel");
     this.saveButton = document.getElementById("task-list-editor-save");
     this.nameInput = document.getElementById("task-list-editor-name");
@@ -89,6 +90,7 @@ export class TaskListEditor {
     if(!taskList.new){
       this.nameInput.value = taskList.name;
       this.editorTitle.textContent = "Editing List";
+      this.showDeleteButton();
     }
     this.show();
     this.update();
@@ -121,5 +123,27 @@ export class TaskListEditor {
   reset(){
     this.nameInput.value = "";
     this.editorTitle.textContent = "New List";
+    this.hideDeleteButton();
+  }
+  showDeleteButton(){
+    if(this.deleteButton == undefined){
+      let btn = document.createElement("button");
+      btn.classList.add("btn-delete");
+      btn.textContent = "Delete List";
+      this.editorBody.appendChild(btn);
+      this.deleteButton = btn;
+
+      btn.addEventListener('click', () => {
+        console.log("deleting list: " + this.currentTaskList.name);
+      });
+    }
+    else {
+      this.deleteButton.style.display = "block";
+    }
+  }
+  hideDeleteButton(){
+    if(this.deleteButton !== undefined ){
+      this.deleteButton.style.display = "none";
+    }
   }
 }
