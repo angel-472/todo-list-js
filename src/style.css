@@ -69,10 +69,6 @@ main {
   margin-left: auto;
 }
 
-#task-lists .task-list-name {
-  cursor: text;
-}
-
 #tasks {
   height: 100%;
   width: 100%;
