@@ -22,7 +22,6 @@ export class SideBar {
       let element = this.getTaskListElement(list);
       container.appendChild(element);
       element.addEventListener('click', () => {
-        console.log(list.id);
         this.app.mainUI.showTaskList(list);
       });
     }

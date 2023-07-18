@@ -10,7 +10,6 @@ export class AllTasksScreen extends TaskScreen {
     titleElement.textContent = "All Tasks";
     container.innerHTML = "";
     let tasks = this.app.storage.getAllTasks();
-    console.log(tasks);
 
     tasks.forEach((task) => {
       let element = this.getTaskElement(task);
