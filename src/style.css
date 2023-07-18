@@ -396,3 +396,8 @@ main {
   cursor: pointer;
   font-family: 'Lato';
 }
+
+.alltasks-screen-list-head {
+  font-family: 'Lato';
+  margin-bottom: 0.5rem;
+}

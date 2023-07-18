@@ -1,4 +1,5 @@
 import { TaskListScreen } from "./task-screens/taskListScreen.js";
+import { AllTasksScreen } from "./task-screens/allTasksScreen.js";
 
 export class MainUI {
   constructor(app){
@@ -26,8 +27,13 @@ export class MainUI {
   }
   showTaskList(list){
     let screen = new TaskListScreen(this.app, list);
-    screen.show();
     this.currentScreen = screen;
+    this.updateCurrentScreen();
+  }
+  showAllTasks(){
+    let screen = new AllTasksScreen(this.app);
+    this.currentScreen = screen;
+    this.updateCurrentScreen();
   }
   getCurrentScreen(){
     return this.currentScreen;
@@ -35,6 +41,12 @@ export class MainUI {
   updateCurrentScreen(){
     if(this.currentScreen !== undefined){
       this.currentScreen.show();
+      if(this.currentScreen.taskList !== undefined){
+        this.editTaskListButton.style.display = "flex";
+      }
+      else {
+        this.editTaskListButton.style.display = "none";
+      }
     }
   }
 }

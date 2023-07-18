@@ -3,10 +3,14 @@ export class SideBar {
     this.app = app;
   }
   init(){ 
+    this.buttonAllTasks = document.getElementById("btn-screen-alltasks");
     this.update();
 
     document.getElementById("new-list").addEventListener("click", (e) => {
       this.createNewTaskList();
+    });
+    this.buttonAllTasks.addEventListener("click", () => {
+      this.app.mainUI.showAllTasks();
     });
   }
   update(){
@@ -22,6 +26,7 @@ export class SideBar {
         this.app.mainUI.showTaskList(list);
       });
     }
+    this.updateElementTaskAmount(this.buttonAllTasks, this.app.storage.getAllTasks().length);
   }
   getTaskListElement(list){
     let element = document.createElement("button");
@@ -43,5 +48,9 @@ export class SideBar {
   openTaskListEditor(element, list){
     console.log("editing task list: " + list.id);
     this.app.taskListEditor.open(list);
+  }
+  updateElementTaskAmount(element, amount){
+    let amountElement = document.querySelector(`#${element.id} > .task-amount`);
+    amountElement.textContent = amount;
   }
 }

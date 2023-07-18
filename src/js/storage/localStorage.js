@@ -68,4 +68,13 @@ export class LocalDataStorage {
     let list = this.getTaskListById(task.listId);
     this.removeTaskFromList(list, task);
   }
+  getAllTasks(){
+    let output = [];
+    this.getTaskLists().forEach((list) => {
+      list.tasks.forEach((task) => {
+        output.push(task);
+      });
+    });
+    return output;
+  }
 }
