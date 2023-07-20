@@ -397,3 +397,8 @@ main {
   font-family: 'Lato';
   margin-bottom: 0.5rem;
 }
+
+.scheduled-task-container {
+  display: none;
+  margin-top: .5em;
+}

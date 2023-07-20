@@ -5,6 +5,7 @@ export class SideBar {
   init(){ 
     this.buttonAllTasks = document.getElementById("btn-screen-alltasks");
     this.buttonTodayTasks = document.getElementById("btn-screen-today");
+    this.buttonScheduledTasks = document.getElementById("btn-screen-scheduled");
     this.update();
 
     document.getElementById("new-list").addEventListener("click", (e) => {
@@ -15,6 +16,9 @@ export class SideBar {
     });
     this.buttonTodayTasks.addEventListener("click", () => {
       this.app.mainUI.showTodayTasks();
+    });
+    this.buttonScheduledTasks.addEventListener("click", () => {
+      this.app.mainUI.showScheduledTasks();
     });
   }
   update(){
@@ -30,6 +34,8 @@ export class SideBar {
       });
     }
     this.updateElementTaskAmount(this.buttonAllTasks, this.app.storage.getAllTasks().length);
+    this.updateElementTaskAmount(this.buttonTodayTasks, this.app.storage.getTodayTasks().length);
+    this.updateElementTaskAmount(this.buttonScheduledTasks, this.app.storage.getAllTasks().filter(task => task.date !== undefined).length);
   }
   getTaskListElement(list){
     let element = document.createElement("button");
