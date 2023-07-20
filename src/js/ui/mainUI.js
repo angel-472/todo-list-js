@@ -25,7 +25,7 @@ export class MainUI {
         this.app.taskListEditor.open(taskList);
       }
     });
-    this.showTaskList(this.app.storage.getDefaultTaskList());
+    this.showAllTasks();
   }
   showTaskList(list){
     let screen = new TaskListScreen(this.app, list);

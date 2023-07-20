@@ -16,7 +16,6 @@ export class ScheduledTasksScreen extends TaskScreen {
       let dateB = parseISO(b.date);
       return dateA - dateB;
     });
-    console.log(sortedTasks);
 
     let divPastDue = document.createElement("div");
     divPastDue.innerHTML = `<h3>Past Due</h3>`;
