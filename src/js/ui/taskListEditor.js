@@ -36,7 +36,7 @@ export class TaskListEditor {
       let button = document.createElement("button");
       button.classList.add("color-circle");
       button.style.backgroundColor = color;
-      if(this.currentTaskList.color == color){
+      if(this.selectedIconColor == color){
         button.classList.add("selected");
       }
       container.appendChild(button);
@@ -58,7 +58,7 @@ export class TaskListEditor {
       icon.classList.add("fa-solid");
       icon.classList.add(iconName);
       button.appendChild(icon);
-      if(this.currentTaskList.icon == iconName){
+      if(this.selectedIcon == iconName){
         button.classList.add("selected");
       }
       container.appendChild(button);
@@ -71,17 +71,17 @@ export class TaskListEditor {
   }
   updateIconDisplay(){
     let iconDisplay = document.getElementById("task-list-editor-icon");
-    iconDisplay.style.backgroundColor = this.currentTaskList.color;
+    iconDisplay.style.backgroundColor = this.selectedIconColor;
     iconDisplay.className = '';
     iconDisplay.classList.add("icon-square");
     iconDisplay.classList.add("fa-solid");
-    iconDisplay.classList.add(this.currentTaskList.icon);
+    iconDisplay.classList.add(this.selectedIcon);
   }
   setIconColor(color){
-    this.currentTaskList.color = color;
+    this.selectedIconColor = color;
   }
   setIcon(iconName){
-    this.currentTaskList.icon = iconName;
+    this.selectedIcon = iconName;
   }
   open(taskList){
     this.reset();
@@ -90,6 +90,8 @@ export class TaskListEditor {
     if(!taskList.new){
       this.nameInput.value = taskList.name;
       this.editorTitle.textContent = "Editing List";
+      this.selectedIcon = taskList.icon;
+      this.selectedIconColor = taskList.color;
       this.showDeleteButton();
     }
     this.show();
@@ -114,6 +116,8 @@ export class TaskListEditor {
   save(){
     let taskList = this.currentTaskList;
     taskList.name = this.nameInput.value;
+    taskList.color = this.selectedIconColor;
+    taskList.icon = this.selectedIcon;
     if(taskList.new){
       this.app.mainUI.showTaskList(taskList);
     }
