@@ -4,6 +4,7 @@ export class SideBar {
   }
   init(){ 
     this.buttonAllTasks = document.getElementById("btn-screen-alltasks");
+    this.buttonTodayTasks = document.getElementById("btn-screen-today");
     this.update();
 
     document.getElementById("new-list").addEventListener("click", (e) => {
@@ -11,6 +12,9 @@ export class SideBar {
     });
     this.buttonAllTasks.addEventListener("click", () => {
       this.app.mainUI.showAllTasks();
+    });
+    this.buttonTodayTasks.addEventListener("click", () => {
+      this.app.mainUI.showTodayTasks();
     });
   }
   update(){

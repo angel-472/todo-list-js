@@ -1,5 +1,6 @@
 import { Task } from '../models/task.js';
 import { List } from '../models/list.js';
+import { parseISO, isSameDay } from 'date-fns';
 
 export class LocalDataStorage {
   constructor(app){
@@ -76,5 +77,16 @@ export class LocalDataStorage {
       });
     });
     return output;
+  }
+  getTodayTasks(){
+    return this.getAllTasks().filter(task => {
+      if(task.date !== undefined){
+        let taskDate = parseISO(task.date);
+        let today = new Date();
+        if(isSameDay(taskDate, today)){
+          return true;
+        }
+      }
+    });
   }
 }

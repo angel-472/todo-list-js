@@ -1,15 +1,15 @@
-import { TaskScreen } from './taskScreen.js';
+import { TaskScreen } from "./taskScreen";
 
-export class AllTasksScreen extends TaskScreen {
+export class TodayTasksScreen extends TaskScreen {
   constructor(app){
     super(app);
   }
   show(){
     let titleElement = document.getElementById("tasks-title");
     let container = document.getElementById("tasks-container");
-    titleElement.textContent = "All Tasks";
+    titleElement.textContent = "Today";
     container.innerHTML = "";
-    let tasks = this.app.storage.getAllTasks();
+    let tasks = this.app.storage.getTodayTasks();
 
     if(tasks.length > 0){
       tasks.forEach((task) => {

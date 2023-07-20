@@ -86,4 +86,10 @@ export class TaskScreen {
 
     return container;
   }
+  getEmptyListElement(){
+    let emptyListElement = document.createElement("div");
+    emptyListElement.innerHTML = `<p>This list has no tasks, start adding some!</p>`;
+    emptyListElement.classList.add("empty-task-list-dialog");
+    return emptyListElement;
+  }
 }

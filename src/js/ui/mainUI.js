@@ -1,5 +1,6 @@
 import { TaskListScreen } from "./task-screens/taskListScreen.js";
 import { AllTasksScreen } from "./task-screens/allTasksScreen.js";
+import { TodayTasksScreen } from "./task-screens/todayTasksScreen.js";
 
 export class MainUI {
   constructor(app){
@@ -32,6 +33,11 @@ export class MainUI {
   }
   showAllTasks(){
     let screen = new AllTasksScreen(this.app);
+    this.currentScreen = screen;
+    this.updateCurrentScreen();
+  }
+  showTodayTasks(){
+    let screen = new TodayTasksScreen(this.app);
     this.currentScreen = screen;
     this.updateCurrentScreen();
   }
