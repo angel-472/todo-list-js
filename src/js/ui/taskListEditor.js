@@ -87,11 +87,11 @@ export class TaskListEditor {
     this.reset();
 
     this.currentTaskList = taskList;
+    this.selectedIcon = taskList.icon;
+      this.selectedIconColor = taskList.color;
     if(!taskList.new){
       this.nameInput.value = taskList.name;
       this.editorTitle.textContent = "Editing List";
-      this.selectedIcon = taskList.icon;
-      this.selectedIconColor = taskList.color;
       this.showDeleteButton();
     }
     this.show();
