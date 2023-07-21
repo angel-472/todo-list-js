@@ -115,10 +115,16 @@ main {
   width: 1.5em;
   height: 1.5em;
   border: 2px solid #a1a1aa;
-  border-radius: 100px;
+  border-radius: 0.6em;
   color: #a1a1aa;
   cursor: pointer;
   flex-shrink: 0;
+}
+
+.task-checkbox.completed {
+  background-color: #f59e0b;
+  border: 3px solid #18181b;
+  outline: 2px solid #f59e0b;
 }
 
 .task-details {

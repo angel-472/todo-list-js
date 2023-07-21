@@ -12,6 +12,31 @@ export class TaskScreen {
     let checkbox = document.createElement("button");
     checkbox.classList.add("task-checkbox");
     container.appendChild(checkbox);
+    checkbox.addEventListener('click', () => {
+      if(task.completed == undefined){
+        checkbox.classList.add("completed");
+        task.completed = true;
+        task.timeout = setTimeout(() => {
+          if(task.completed = true){
+            this.app.storage.deleteTask(task);
+            this.app.storage.save();
+            this.app.sidebar.update();
+            this.app.mainUI.updateCurrentScreen();
+          }
+        }, 3000);
+      }
+      else {
+        checkbox.classList.remove("completed");
+        delete task.completed;
+        if(task.timeout !== undefined){
+          clearTimeout(task.timeout);
+          delete task.timeout;
+        }
+      }
+    }); 
+    if(task.completed){
+      checkbox.classList.add("completed");
+    }
 
     //details
     let detailsContainer = document.createElement("div");
