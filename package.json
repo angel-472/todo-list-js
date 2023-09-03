@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/angel-472/todo-list-js#readme",
   "devDependencies": {
     "css-loader": "^6.8.1",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.1",
     "style-loader": "^3.3.3",
     "webpack": "^5.80.0",
